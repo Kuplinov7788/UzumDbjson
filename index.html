@@ -127,9 +127,10 @@
           <span class="close">&times;</span>
           <h2>Mahsulot qo‘shish</h2>
           <form id="productForm">
-            <input type="text" name="title" placeholder="Title" required />
+            <input class="text" type="text" name="title" placeholder="Title" required />
             <input type="number" name="price" placeholder="Price" required />
             <input
+              class="number"
               type="number"
               name="old_price"
               placeholder="Old Price"
@@ -160,7 +161,13 @@
               placeholder="Reviews"
               required
             />
-            <button type="submit">Yuborish</button>
+            <input
+              type="url"
+              name="photo"
+              placeholder="photo only link or url "
+              required
+            />
+            <button class="addProduct" type="submit">Yuborish</button>
           </form>
         </div>
       </div>

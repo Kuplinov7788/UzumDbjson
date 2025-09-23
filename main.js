@@ -3,11 +3,9 @@ let getcard = async () => {
         let modal = document.querySelector('.modal');
         let btn = document.querySelector('.btn-modal');
         let close = document.querySelector('.close');
-
         btn.addEventListener('click', () => {
             modal.classList.add('open');   // ✅ modal ochiladi
         });
-
         close.addEventListener('click', () => {
             modal.classList.remove('open'); // ✅ modal yopiladi
         });
@@ -51,3 +49,23 @@ let getcard = async () => {
     }
 }
 getcard()
+
+let btnAdd = document.querySelector('.addProduct').addEventListener('click', () => {
+    console.log('hello');
+
+    let postProduct = async () => {
+        let text = document.querySelector('.text')
+        let title = text.value
+        let postres = await fetch('http://localhost:3001/products', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title,
+                
+            })
+        })
+    }
+    postProduct()
+})
